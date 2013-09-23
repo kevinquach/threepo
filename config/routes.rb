@@ -3,4 +3,5 @@ Threepo::Application.routes.draw do
 
   root 'designs#index'
 
+  resources :designs
 end
