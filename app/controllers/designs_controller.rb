@@ -1,5 +1,7 @@
 class DesignsController < ApplicationController
 
+  before_filter :authenticate_user!, except: [:show, :index]
+
   def index
    @designs = Design.all
   end

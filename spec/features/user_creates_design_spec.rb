@@ -35,4 +35,12 @@ feature 'user creates design', %q{
       expect(design.description).to eql('Best design youve ever seen')
     end
   end
+
+  context 'as a guest' do
+    scenario 'cannot access new design page' do
+      visit new_design_path
+      expect(page).to have_content('You need to sign in or sign up before continuing')
+      expect(page).to_not have_content('Upload Design')
+    end
+  end
 end
