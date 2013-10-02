@@ -22,6 +22,7 @@ feature 'user creates design', %q{
 
       fill_in 'Title', with: 'Brand spanking new design'
       fill_in 'Description', with: 'Best design youve ever seen'
+      attach_file 'Image', 'spec/support/sample.jpg'
 
       click_button 'Upload Design'
 
@@ -33,6 +34,8 @@ feature 'user creates design', %q{
       expect(design.user).to eql(user)
       expect(design.title).to eql('Brand spanking new design')
       expect(design.description).to eql('Best design youve ever seen')
+
+      expect(design.image.current_path).to_not be_nil
     end
   end
 

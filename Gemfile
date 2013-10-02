@@ -42,7 +42,15 @@ group :development, :test do
   gem 'factory_girl'
   gem 'capybara'
   gem 'shoulda'
+  gem 'pry-rails'
 end
+
+gem 'carrierwave'
+
+gem 'rmagick'
+
+gem 'anjlab-bootstrap-rails', :require => 'bootstrap-rails',
+                              :github => 'anjlab/bootstrap-rails'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 

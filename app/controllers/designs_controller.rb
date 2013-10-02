@@ -10,7 +10,7 @@ class DesignsController < ApplicationController
   end
 
   def create
-    @design = Design.new(params[:design].permit(:title, :description))
+    @design = Design.new(params[:design].permit(:title, :description, :image))
     @design.user = current_user
 
     if @design.save

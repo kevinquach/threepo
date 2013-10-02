@@ -15,4 +15,6 @@ feature 'user browses list of designs', %q{
       expect(page).to have_content(design.title)
     end
   end
+
+  scenario 'user tries to view a design'
 end
