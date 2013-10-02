@@ -34,6 +34,7 @@ feature 'user creates design', %q{
       expect(design.user).to eql(user)
       expect(design.title).to eql('Brand spanking new design')
       expect(design.description).to eql('Best design youve ever seen')
+      expect(page).to have_content('#image_preview img')
 
       expect(design.image.current_path).to_not be_nil
     end
