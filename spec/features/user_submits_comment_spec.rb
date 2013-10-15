@@ -11,20 +11,18 @@ feature 'user submits a comment for a design', %q{
     let(:user) { FactoryGirl.create(:user) }
 
     before :each do
-      visit new_user_session_path
-      fill_in 'Email', with: user.email
-      fill_in 'Password', with: user.password
-      click_button 'Sign in'
+      sign_in_as user
     end
 
     scenario 'user submit valid comment' do
-      design = FactoryGirl.create(:design)
+      design = FactoryGirl.create(:design, :with_image)
       prev_count = design.comments.count
 
-      visit designs_path
-      find('img.design').click
+      visit design_path(design)
+      save_and_open_page
+      # find('img.design').click
 
-      fill_in 'Comment on this design:', with: 'Cool design, bro.'
+      fill_in 'Body', with: 'Cool design, bro.'
       click_button 'Create Comment'
 
       expect(page).to have_content('Comment successfully added.')

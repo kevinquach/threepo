@@ -10,4 +10,8 @@ FactoryGirl.define do
     description 'Funky design'
     user
   end
+
+  trait :with_image do
+    image { Rack::Test::UploadedFile.new(File.join(Rails.root, 'spec', 'support', 'sample.jpg')) }
+  end
 end

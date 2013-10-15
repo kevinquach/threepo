@@ -1,0 +1,13 @@
+<h1>@design.title</h1>
+
+<h2>Comment on this design:</h2>
+<%= simple_form_for([@design, @design.comments.build]) do |f| %>
+  <%= f.input :body %>
+  <%= f.submit %>
+<% end %>
+
+
+<h2>Comments</h2>
+<%= render @design.comments %>
+
+

@@ -10,11 +10,11 @@ feature 'user browses list of designs', %q{
     designs = FactoryGirl.create_list(:design, 5)
 
     visit root_path
-
+    expect(page).to have_selector('nav')
     designs.each do |design|
       expect(page).to have_content(design.title)
     end
   end
 
-  scenario 'user tries to view a design'
+
 end

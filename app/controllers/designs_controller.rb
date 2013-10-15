@@ -3,10 +3,11 @@ class DesignsController < ApplicationController
   before_filter :authenticate_user!, except: [:show, :index]
 
   def index
-   @designs = Design.all
+    @designs = Design.all
   end
 
   def new
+    @design = Design.new
   end
 
   def create

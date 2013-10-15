@@ -43,6 +43,7 @@ group :development, :test do
   gem 'capybara'
   gem 'shoulda'
   gem 'pry-rails'
+  gem 'launchy'
 end
 
 gem 'carrierwave'
