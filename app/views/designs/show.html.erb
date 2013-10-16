@@ -1,13 +1,31 @@
-<h1>@design.title</h1>
+<div class="row">
+  <div class="col-md-5 col-md-offset-3">
+    <div>
+    <%= image_tag @design.image_url(:thumb).to_s %>
+    </div>
+  </div>
+  <div class="col-md-4">
+    <div class="facts-section">
+      <dl class="dl-horizontal">
+        <h2><dt><strong>Title:</strong><dt></h2>
+        <dd><%= @design.title %></dd>
+        <h2><dt><strong>Description:</strong></dt></h2>
+        <dd><%= @design.description %></dd>
+      </dl>
+    </div>
+  </div>
+</div>
 
-<h2>Comment on this design:</h2>
-<%= simple_form_for([@design, @design.comments.build]) do |f| %>
-  <%= f.input :body %>
-  <%= f.submit %>
-<% end %>
+<div class="row">
+  <div class="col-md-4 col-md-offset-1">
+    <h2>Comment on this design:</h2>
+    <%= simple_form_for([@design, @design.comments.build]) do |f| %>
+      <%= f.input :body, label: "Comment on this design: " %><br><br>
+      <%= f.submit %>
+    <% end %>
 
-
-<h2>Comments</h2>
-<%= render @design.comments %>
+    <%= render @design.comments %>
+  </div>
+</div>
 
 

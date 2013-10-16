@@ -6,3 +6,66 @@
 :root, body {
   background: url(image_path('background.jpg')) repeat;
 }
+
+h1,h2,h3,h4 {
+  font-family: 'Londrina Sketch', cursive;
+  line-height: 100px;
+  color: white;
+}
+
+.navbar {
+  margin: 0 auto;
+  background-color: #ff5f00;
+  border: 0;
+  top-margin:10px;
+}
+
+body {
+  font-family: 'Monaco', Helvetica, Arial, sans-serif;
+  font-size: 16px;
+  line-height: 16px;
+  color: white;
+}
+
+.navbar-brand {
+  font-size: 42px;
+  line-height: 32px;
+}
+
+.navbar .navbar-brand {
+  font-family: 'Londrina Sketch', cursive;
+  color: white;
+}
+
+.navbar-default .navbar-nav > li > a {
+  color: white;
+}
+
+.facts-section {
+  font-family: 'Monaco', Helvetica, Arial, sans-serif;
+  font-size: 14px;
+}
+
+input#design_title {
+  width: 25em;
+}
+
+textarea#design_description {
+  width: 30em;
+  height: 10em;
+}
+
+input#comment_body {
+  width: 20em;
+  height: 5em;
+}
+
+.design {
+  margin-bottom: 0.4em;
+  margin-right: 0.4em;
+  display: inline-block;
+}
+
+.design-rows{
+  margin-top: 1.0em;
+}

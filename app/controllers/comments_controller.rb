@@ -15,6 +15,13 @@ before_action :authenticate_user!, only: [:create, :destroy]
     end
   end
 
+  def destroy
+    @design = Design.find(params[:design_id])
+    @comment = @design.comments.find(params[:id])
+    @comment.destroy
+    redirect_to design_path(@design)
+  end
+
   private
   def comment_params
     params.require(:comment).permit(:body)
