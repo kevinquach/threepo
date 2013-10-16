@@ -2,3 +2,7 @@
   height: 200px;
   width: 200px;
 }
+
+:root, body {
+  background: url(image_path('background.jpg')) repeat;
+}
