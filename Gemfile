@@ -41,6 +41,7 @@ group :development, :test do
   gem 'launchy'
   gem 'valid_attribute'
   gem 'quiet_assets'
+  gem 'dotenv-rails'
 end
 
 gem 'carrierwave'

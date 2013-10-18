@@ -16,3 +16,6 @@
 /tmp
 config/database.yml
 public/uploads
+
+# Ignore environment variables
+/.env
