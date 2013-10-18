@@ -25,6 +25,7 @@ feature 'user creates design', %q{
       click_button 'Upload Your Design'
 
       expect(page).to have_content('Successfully uploaded design')
+      expect(Design.last.image.url).to be_present
 
       expect(Design.count).to eql(1)
 
@@ -32,7 +33,6 @@ feature 'user creates design', %q{
       expect(design.user).to eql(user)
       expect(design.title).to eql('Brand spanking new design')
       expect(design.description).to eql('Best design youve ever seen')
-
 
       expect(design.image.current_path).to_not be_nil
     end
