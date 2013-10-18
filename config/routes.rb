@@ -3,5 +3,7 @@ Threepo::Application.routes.draw do
 
   root 'designs#index'
 
-  resources :designs
+  resources :designs do
+    resources :comments
+  end
 end

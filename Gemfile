@@ -6,11 +6,6 @@ gem 'rails', '4.0.0'
 # Use sqlite3 as the database for Active Record
 gem 'pg'
 
-gem 'devise'
-
-gem 'simple_form'
-
-gem 'haml-rails'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'
 
@@ -42,7 +37,28 @@ group :development, :test do
   gem 'factory_girl'
   gem 'capybara'
   gem 'shoulda'
+  gem 'pry-rails'
+  gem 'launchy'
+  gem 'valid_attribute'
+  gem 'quiet_assets'
 end
+
+gem 'carrierwave'
+
+gem 'rmagick'
+
+gem 'anjlab-bootstrap-rails', :require => 'bootstrap-rails',
+                              :github => 'anjlab/bootstrap-rails'
+gem 'devise'
+
+gem 'simple_form'
+
+gem 'haml-rails'
+
+gem 'fog'
+
+gem 'ransack'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 

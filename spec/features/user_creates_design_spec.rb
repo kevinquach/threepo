@@ -11,19 +11,18 @@ feature 'user creates design', %q{
     let(:user) { FactoryGirl.create(:user) }
 
     before :each do
-      visit new_user_session_path
-      fill_in 'Email', with: user.email
-      fill_in 'Password', with: user.password
-      click_button 'Sign in'
+      sign_in_as user
     end
 
     scenario 'fills in form to create design' do
       visit new_design_path
 
-      fill_in 'Title', with: 'Brand spanking new design'
-      fill_in 'Description', with: 'Best design youve ever seen'
+      fill_in 'Name your design!', with: 'Brand spanking new design'
+      fill_in 'Describe your design!', with: 'Best design youve ever seen'
+      attach_file 'Image', 'spec/support/sample.jpg'
+      page.has_css?('img', text: "sample.jpg")
 
-      click_button 'Upload Design'
+      click_button 'Upload Your Design'
 
       expect(page).to have_content('Successfully uploaded design')
 
@@ -33,6 +32,9 @@ feature 'user creates design', %q{
       expect(design.user).to eql(user)
       expect(design.title).to eql('Brand spanking new design')
       expect(design.description).to eql('Best design youve ever seen')
+
+
+      expect(design.image.current_path).to_not be_nil
     end
   end
 
@@ -40,7 +42,7 @@ feature 'user creates design', %q{
     scenario 'cannot access new design page' do
       visit new_design_path
       expect(page).to have_content('You need to sign in or sign up before continuing')
-      expect(page).to_not have_content('Upload Design')
+      expect(page).to_not have_content('Upload Your Design')
     end
   end
 end
