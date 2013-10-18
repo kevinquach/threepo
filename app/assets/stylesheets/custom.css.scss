@@ -4,7 +4,7 @@
 }
 
 :root, body {
-  background: url(image_path('background.jpg')) repeat;
+  background: image-url(image_path('background.jpg')) repeat;
 }
 
 h1,h2,h3,h4 {

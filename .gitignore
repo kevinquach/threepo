@@ -14,8 +14,8 @@
 # Ignore all logfiles and tempfiles.
 /log/*.log
 /tmp
-config/database.yml
-public/uploads
+/config/database.yml
+/public/uploads
 
 # Ignore environment variables
 /.env
