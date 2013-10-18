@@ -9,14 +9,12 @@ feature 'User searches for a design by name in the search bar' , %Q{
   scenario 'user queries with the search bar' do
 
     user = FactoryGirl.create(:user)
-    current_label = FactoryGirl.create(:design, :with_image)
+    current_design = FactoryGirl.create(:design, :with_image)
     sign_in_as user
-
-    visit design_path(current_design)
 
     visit designs_path
 
-    fill_in 'q_design_cont', with: current_design.title
+    fill_in 'q_title_cont', with: current_design.title
 
     click_button 'Search'
 

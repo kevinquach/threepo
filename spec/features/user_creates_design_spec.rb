@@ -17,12 +17,12 @@ feature 'user creates design', %q{
     scenario 'fills in form to create design' do
       visit new_design_path
 
-      fill_in 'Title', with: 'Brand spanking new design'
-      fill_in 'Description', with: 'Best design youve ever seen'
+      fill_in 'Name your design!', with: 'Brand spanking new design'
+      fill_in 'Describe your design!', with: 'Best design youve ever seen'
       attach_file 'Image', 'spec/support/sample.jpg'
       page.has_css?('img', text: "sample.jpg")
 
-      click_button 'Upload Design'
+      click_button 'Upload Your Design'
 
       expect(page).to have_content('Successfully uploaded design')
 
@@ -42,7 +42,7 @@ feature 'user creates design', %q{
     scenario 'cannot access new design page' do
       visit new_design_path
       expect(page).to have_content('You need to sign in or sign up before continuing')
-      expect(page).to_not have_content('Upload Design')
+      expect(page).to_not have_content('Upload Your Design')
     end
   end
 end

@@ -19,10 +19,9 @@ feature 'user submits a comment for a design', %q{
       prev_count = design.comments.count
 
       visit design_path(design)
-      save_and_open_page
       # find('img.design').click
 
-      fill_in 'Body', with: 'Cool design, bro.'
+      fill_in 'Comment on this design:', with: 'Cool design, bro.'
       click_button 'Create Comment'
 
       expect(page).to have_content('Comment successfully added.')
