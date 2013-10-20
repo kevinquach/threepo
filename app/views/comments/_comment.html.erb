@@ -2,17 +2,16 @@
 
 <h2>Comments</h2>
 
-  <table class="table">
+<table class="table">
+  <tr>
+    <%= comment.body %><br>
+    <small>on <%= comment.created_at %></small>
+  </tr>
+</table>
 
-    <tr>
-      <%= comment.body %><br>
-      <small>on <%= comment.created_at %></small>
-    </tr>
-  </table>
-
-  <p>
-      <%= link_to 'Delete Comment', [comment.design, comment],
-                method: :delete,
-                data: { confirm: 'Are you sure?' } %>
-  </p>
+<p>
+  <%= link_to 'Delete Comment', [comment.design, comment],
+  method: :delete,
+  data: { confirm: 'Are you sure?' } %>
+</p>
 <%- end -%>

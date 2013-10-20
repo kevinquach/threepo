@@ -1,0 +1,14 @@
+<div class="row design-rows">
+  <div class="col-md-10 col-md-offset-1">
+    <% @designs.each do |design| %>
+    <div class="design">
+      <br><%= link_to image_tag(design.image_url(:index_thumb)),
+        design_path(design), class: "designs-frontpage", input_html:
+          { rel: "shadowbox" } %>
+      <br><h3><%= design.title %></h3>
+      <%= link_to 'Delete Design', design_path(design), method: :delete,
+        data: { confirm: 'Are you sure?' } %>
+    </div>
+    <%- end -%>
+  </div>
+</div>

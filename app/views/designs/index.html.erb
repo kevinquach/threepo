@@ -1,32 +1,20 @@
-     <form class="navbar-form navbar-right" role="search">
-        <div class="form-group">
-          <%= search_form_for @q do |f| %>
-            <%= f.text_field :title_cont %>
-            <%= f.submit %>
-          <% end %>
-        </div>
-      </form>
+<form class="navbar-form navbar-right" role="search">
+  <div class="form-group">
+    <%= search_form_for @query do |f| %>
+    <%= f.text_field :title_cont %>
+    <%= f.submit %>
+    <% end %>
+  </div>
+</form>
 
 <div class="row top-row">
   <div class="col-md-3 pull-right">
     <% if user_signed_in? %>
-     <%= link_to 'Upload a design', new_design_path, class: "btn btn-primary btn-lg" %>
+    <%= link_to 'Upload a design', new_design_path, class:
+      "btn btn-primary btn-lg" %>
     <% end %>
   </div>
-
-<h1>Welcome to threepo, the world's greatest 3d-print design repo</h1>
-
+  <h1>Welcome to threepo, the world's greatest 3d-print design repo</h1>
 </div>
 
-<div class="row design-rows">
-  <div class="col-md-10 col-md-offset-1">
-    <% @designs.each do |design| %>
-    <div class="design">
-      <br><%= link_to image_tag(design.image_url(:index_thumb)), design_path(design), class: "designs-frontpage", input_html: { rel: "shadowbox" } %>
-       <br><h3><%= design.title %></h3>
-       <%= link_to 'Delete Design', design_path(design), method: :delete,
-          data: { confirm: 'Are you sure?' } %>
-    </div>
-    <%- end -%>
-  </div>
-</div>
+<%= render @designs %>

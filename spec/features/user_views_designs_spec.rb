@@ -16,5 +16,4 @@ feature 'user browses list of designs', %q{
     end
   end
 
-
 end

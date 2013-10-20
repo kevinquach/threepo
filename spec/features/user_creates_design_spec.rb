@@ -26,6 +26,7 @@ feature 'user creates design', %q{
 
       expect(page).to have_content('Successfully uploaded design')
       expect(Design.last.image.url).to be_present
+      page.has_css?('class', text: "thumbnail")
 
       expect(Design.count).to eql(1)
 

@@ -16,18 +16,27 @@ feature 'user submits a comment for a design', %q{
 
     scenario 'user submit valid comment' do
       design = FactoryGirl.create(:design, :with_image)
-      prev_count = design.comments.count
 
       visit design_path(design)
-      # find('img.design').click
 
       fill_in 'Comment on this design:', with: 'Cool design, bro.'
       click_button 'Create Comment'
 
       expect(page).to have_content('Comment successfully added.')
-      expect(design.comments.count).to eql(prev_count + 1)
 
       expect(design.comments.last.body).to eql('Cool design, bro.')
+    end
+
+    scenario 'user submits blank comment' do
+      design = FactoryGirl.create(:design, :with_image)
+      prev_count = design.comments.count
+
+      visit design_path(design)
+
+      fill_in 'Comment on this design:', with: ''
+      click_button 'Create Comment'
+      expect(page).to have_content('There was an error. Your comment did not save.')
+      expect(design.comments.count).to eql(prev_count)
     end
   end
 
