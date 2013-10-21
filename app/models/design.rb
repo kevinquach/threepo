@@ -8,4 +8,5 @@ class Design < ActiveRecord::Base
     inverse_of: :design
 
   mount_uploader :image, ImageUploader
+  mount_uploader :file, FileUploader
 end

@@ -1,3 +1,4 @@
+<div class="well">
 <form class="navbar-form navbar-right" role="search">
   <div class="form-group">
     <%= search_form_for @query do |f| %>
@@ -16,5 +17,9 @@
   </div>
   <h1>Welcome to threepo, the world's greatest 3d-print design repo</h1>
 </div>
-
+<div class="row design-rows">
+  <div class="col-md-10 col-md-offset-1">
 <%= render @designs %>
+</div>
+  </div>
+</div>

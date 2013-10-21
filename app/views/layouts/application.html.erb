@@ -22,32 +22,25 @@
 
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse navbar-ex1-collapse">
-
       <ul class="nav navbar-nav">
         <li><a href="#">New Designs</a></li>
-        <li><a href="beer_labels/latest">Popular Designs</a></li>
+        <li><a href="#">Popular Designs</a></li>
         <li><a href="#">About</a></li>
       </ul>
 
-
-
       <ul class="nav navbar-nav navbar-right">
-
         <% if user_signed_in? %>
           <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown"><strong><%= current_user.email%></strong><b class="caret"></b></a>
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown"><%= current_user.email %><b class="caret"></b></a>
             <ul class="dropdown-menu">
               <li><%= link_to "Edit account", edit_user_registration_path %></li>
               <li><%= link_to "Sign out", destroy_user_session_path, :method => :delete %></li>
             </ul>
-
         <% else %>
           <li><%= link_to 'Sign up', new_user_registration_path %></li>
           <li><%= link_to 'Sign in', new_user_session_path %></li>
         <% end %>
-
-
-
+          </li>
       </ul>
     </div><!-- /.navbar-collapse -->
   </nav>
