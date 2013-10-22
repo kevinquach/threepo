@@ -9,4 +9,4 @@
 
 # Make sure your secret_key_base is kept private
 # if you're sharing your code publicly.
-Threepo::Application.config.secret_key_base = '14e09fb3796d0fa89c1b49b2658f6b32987676fb3114071b8bb93c538a1a2259748c79e39a7055cc2b2467243d7396923a9636c89340026905f98a86d001f5f4'
+Threepo::Application.config.secret_key_base = ENV['SECRET_TOKEN']

@@ -1,30 +1,39 @@
-<div class="row">
-  <div class="col-md-5 col-md-offset-3">
-    <div>
-    <%= image_tag @design.image_url(:thumb).to_s %>
+<div class="well">
+  <div class="row">
+    <div class="col-md-5 col-md-offset-3">
+      <div>
+      <%= image_tag @design.image_url(:thumb) %>
+      </div>
     </div>
-  </div>
-  <div class="col-md-4">
-    <div class="facts-section">
-      <dl class="dl-horizontal">
-        <h2><dt><strong>Title:</strong><dt></h2>
-        <dd><%= @design.title %></dd>
-        <h2><dt><strong>Description:</strong></dt></h2>
-        <dd><%= @design.description %></dd>
-      </dl>
+  </div><br><br>
+
+<div class="container">
+  <div class="col-md-8 col-md-offset-2">
+    <div class="panel panel-primary">
+      <div class="panel-heading text-center">
+        <div class="panel-title"><h2><%= @design.title %></h2></div>
+      </div>
+
+      <div class="panel-body">
+        <h4>"<%= @design.description %>"<br><br>
+        - <%= @design.user.email %></h4>
+      </div>
     </div>
   </div>
 </div>
 
+<div class="container">
 <div class="row">
-  <div class="col-md-4 col-md-offset-1">
-    <h2>Comment on this design:</h2>
-    <%= simple_form_for([@design, @design.comments.build]) do |f| %>
-      <%= f.input :body, label: "Comment on this design: " %><br><br>
-      <%= f.submit %>
+  <div class="col-md-8 col-md-offset-2">
+    <% if user_signed_in? %>
+      <h2>Add a comment:</h2>
+      <%= render "comments/form" %>
     <% end %>
 
     <%= render @design.comments %>
+    <div class="text-center">
+      <%= link_to 'Back to Home', designs_path %>
+    </div>
   </div>
 </div>
 

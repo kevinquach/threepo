@@ -1,0 +1,4 @@
+<%= simple_form_for([@design, @design.comments.build]) do |f| %>
+  <%= f.input :body, :label => false %><br>
+  <%= f.submit class: "btn-info btn-default" %>
+<% end %>

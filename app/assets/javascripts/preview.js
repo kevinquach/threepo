@@ -18,7 +18,7 @@ function handleFileSelect(evt) {
       // Closure to capture the file information.
       reader.onload = (function(theFile) {
         return function(e) {
-            $('#image_preview').append('<img src="' + e.target.result + '" class="thumbnail"/>')
+          $('#image_preview').append('<img src="' + e.target.result + '" class="thumbnail"/>')
 
         };
       })(f);
@@ -28,4 +28,4 @@ function handleFileSelect(evt) {
     }
   }
 
-  document.getElementById('image').addEventListener('change', handleFileSelect, false);
+document.getElementById('image').addEventListener('change', handleFileSelect, false);
