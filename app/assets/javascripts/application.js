@@ -10,12 +10,9 @@
 // Read Sprockets README (https://github.com/sstephenson/sprockets#sprockets-directives) for details
 // about supported directives.
 //
+//= shadowbox
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
 //
-// Include all twitter's javascripts
-//= require twitter/bootstrap
-//= chosen.jquery.min
-//= shadowbox
