@@ -15,7 +15,6 @@ gem 'rails', '4.0.0'
 gem 'ransack'
 gem 'rmagick'
 gem 'simple_form'
-gem 'turbolinks'
 
 # For assets only and not required
 # in production by default
