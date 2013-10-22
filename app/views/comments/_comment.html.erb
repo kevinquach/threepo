@@ -1,13 +1,9 @@
 <%- if comment.persisted? %>
-
-<h2>Comments</h2>
-
-<table class="table">
-  <tr>
-    <%= comment.body %><br>
-    <small>on <%= comment.created_at %></small>
-  </tr>
-</table>
+<br>
+<div class="panel panel-default panel-body">
+  <%= comment.body %><br>
+  <small>on <%= comment.created_at %></small><br>
+</div>
 
 <p>
   <%= link_to 'Delete Comment', [comment.design, comment],

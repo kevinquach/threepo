@@ -1,25 +1,32 @@
-<div class="well">
-<form class="navbar-form navbar-right" role="search">
-  <div class="form-group">
-    <%= search_form_for @query do |f| %>
-    <%= f.text_field :title_cont %>
-    <%= f.submit %>
-    <% end %>
+<div class="container">
+  <div class="row top-row">
+    <h1>Welcome to threepo, the world's greatest 3d-print design repo</h1>
   </div>
-</form>
 
-<div class="row top-row">
   <div class="col-md-3 pull-right">
     <% if user_signed_in? %>
-    <%= link_to 'Upload a design', new_design_path, class:
-      "btn btn-primary btn-lg" %>
+      <div class="alert alert-dismissable alert-info">
+      <p>Have a design you'd like to share?</p><br>
+      <%= link_to 'Upload your design', new_design_path, class:
+      "btn btn-primary btn-lg btn-block" %>
+      </div>
     <% end %>
   </div>
-  <h1>Welcome to threepo, the world's greatest 3d-print design repo</h1>
 </div>
-<div class="row design-rows">
-  <div class="col-md-10 col-md-offset-1">
-<%= render @designs %>
-</div>
+
+<div class="well">
+  <div class="text-center">
+  <%= search_form_for @query do |f| %>
+    <%= f.label "Find your design " %>
+    <%= f.text_field :title_cont %>
+    <%= f.submit class: 'btn-info btn-default'%>
+  <% end %><br>
+  </div>
+
+  <div class="row design-rows">
+    <div class="col-md-10 col-md-offset-1">
+      <%= render @designs %>
+    </div>
   </div>
 </div>
+
